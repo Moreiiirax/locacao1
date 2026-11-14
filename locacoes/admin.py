@@ -1,0 +1,8 @@
+from django.contrib import admin
+from .models import Locacao
+
+@admin.register(Locacao)
+class LocacaoAdmin(admin.ModelAdmin):
+    list_display = ('cliente', 'carro', 'data_retirada', 'data_devolucao', 'valor_total', 'ativa')
+    search_fields = ('cliente', 'carro', 'data_retirada', 'data_devolucao', 'valor_total', 'ativa')
+    list_filter = ('ativa',)
